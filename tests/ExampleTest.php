@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace Gmblog\Tests;
 
 class ExampleTest extends TestCase
 {

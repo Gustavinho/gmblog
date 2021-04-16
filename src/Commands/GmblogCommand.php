@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace GmGmblog\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class GmblogCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'gmblog';
 
     public $description = 'My command';
 
