@@ -1,13 +1,13 @@
 <?php
 
-namespace Gmblog;
+namespace Gmblog\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \GmGmblog\Gmblog
  */
-class GmblogFacade extends Facade
+class Gmblog extends Facade
 {
     protected static function getFacadeAccessor()
     {

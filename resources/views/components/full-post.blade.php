@@ -16,8 +16,7 @@
       </div>
     </div>
     <div class="flex-1 flex justify-end items-center">
-      @component('components.share-post', ['post' => $post])
-      @endcomponent
+      <x-gmblog-share-post :post='$post' />
     </div>
   </div>
 
@@ -43,8 +42,7 @@
         <small>Compartir en</small>
       </div>
       <div class="flex justify-end">
-        @component('components.share-post', ['post' => $post])
-        @endcomponent
+        <x-gmblog-share-post :post='$post' />
       </div>
     </div>
   </div>

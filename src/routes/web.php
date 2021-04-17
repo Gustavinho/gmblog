@@ -2,5 +2,7 @@
 
 use Gmblog\Http\Controllers\PostsController;
 
-Route::get('/blog', [PostsController::class, 'index'])->name('blog.index');
-Route::get('/blog/{slug}', [PostsController::class, 'show'])->name('blog.show');
+Route::prefix(config('gmblog.baseRoute'))->group(function () {
+    Route::get('/', [PostsController::class, 'index'])->name('blog.index');
+    Route::get('/{slug}', [PostsController::class, 'show'])->name('blog.show');
+});

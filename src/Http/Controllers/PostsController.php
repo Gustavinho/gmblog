@@ -2,6 +2,7 @@
 
 namespace Gmblog\Http\Controllers;
 
+use Gmblog\Facades\Gmblog;
 use Wink\WinkTag;
 
 class PostsController extends BlogController
@@ -11,7 +12,7 @@ class PostsController extends BlogController
         $tags = WinkTag::orderBy('name')->get();
 
         return view('gmblog::posts.index', [
-            'layout' => $this->layout,
+            'layout' => Gmblog::getLayout('blog'),
             'posts' => $this->posts->allPaginatedBy(12),
             'tags' => $tags
         ]);
@@ -22,7 +23,7 @@ class PostsController extends BlogController
         $post = $this->posts->bySlug($slug);
 
         return view('gmblog::posts.show', [
-            'layout' => $this->layout,
+            'layout' => Gmblog::getLayout('post'),
             'post' => $post,
             'posts' => $this->posts->lastNdifferentAs(3, $post),
         ]);

@@ -16,7 +16,7 @@
     ],
     "require": {
         "league/flysystem-aws-s3-v3": "^1.0",
-        "writingink/wink": "^1.2.0"
+        "themsaid/wink": "^1.2.0"
     },
     "require-dev": {
         "orchestra/testbench": "^6.13",
