@@ -6,6 +6,11 @@ class Gmblog
 {
     private $layouts = null;
 
+    /**
+     * Array with the layouts for the blog and the post
+     * section
+     * @example Gmblog::layouts(['blogLayout', 'postLayout'])
+     */
     public function layouts($layouts = [])
     {
         $this->layouts = $layouts;
@@ -23,6 +28,6 @@ class Gmblog
             return $layouts[$type];
         }
 
-        return config('gmblog.layouts' . $type);
+        return config('gmblog.layouts.' . $type);
     }
 }

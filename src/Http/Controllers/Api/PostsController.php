@@ -1,6 +1,6 @@
 <?php
 
-namespace Gmblog\Http\Controllers;
+namespace Gmblog\Http\Controllers\Api;
 
 use Gmblog\Contracts\PostsRepository;
 use Illuminate\Routing\Controller;
