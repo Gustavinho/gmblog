@@ -2,26 +2,30 @@
 
 @section('blog')
 
-<div class="grid gap-16 grid-cols-1 md:grid-cols-3">
-  <div class="col-span-1 md:col-span-2">
+<div class="lg:flex lg:space-x-8 xl:space-x-16">
+  <div class="flex-1">
     @foreach ($posts as $post)
-      <div class="mb-24">
-        <x-gmblog-post :post="$post" :showDate="true" />
-      </div>
+      @foreach (range(1, 5) as $item)
+        <div class="{{ !$loop->last ? 'border-b pb-8 lg:pb-12 ' : '' }} border-gray-200 {{ !$loop->first ? 'mt-8 lg:mt-12' : '' }}">
+          <x-gmblog-post :post="$post" :showDate="true" />
+        </div>
+      @endforeach
     @endforeach
   </div>
-  <div class="">
-    <h3>Etiquetas relacionadas</h3>
-    <ul>
-      @foreach ($tags as $tag)
-        <li class="py-2">
-          <x-gmblog-tag>
-            {{ $tag->name }}
-          </x-gmblog-tag>
-        </li>
-      @endforeach
-    </ul>
-  </div>
+  @if (!$tags->isEmpty())
+    <div class="w-1/3">
+      <h3>Etiquetas relacionadas</h3>
+      <ul>
+        @foreach ($tags as $tag)
+          <li class="py-2">
+            <x-gmblog-tag>
+              {{ $tag->name }}
+            </x-gmblog-tag>
+          </li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
 </div>
 
 @endsection

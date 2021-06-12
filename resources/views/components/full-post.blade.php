@@ -1,26 +1,32 @@
 @props(['post'])
 
-<article class="container mx-auto mt-8 pb-32 prose lg:prose-xl">
-  <h1>{{ $post->title }}</h1>
+@if (config('gmblog.showAuthor'))
+  <div class="max-w-4xl px-0 md:px-10 mx-auto">
+    <div class="flex mt-4">
+      <div class="flex">
+        <div class="mr-4 flex-shrink-0">
+          <img src="{{ $post->author->avatar }}" alt="" class="rounded-full w-12 h-12 mt-0 mb-0 object-cover">
+        </div>
+        <div>
+          <h4 class="text-gray-900 font-medium">{{ $post->author->name }}</h4>
+          <p class="text-gray-500">
+            {{ $post->publish_date->diffForHumans() }}
+          </p >
+        </div>
+      </div>
 
-  <div class="flex">
-    <div class="flex items-center">
-      <img src="{{ $post->author->avatar }}" alt="" class="rounded-full w-12 h-12 mt-0 mb-0" style="margin-bottom: 0; margin-top: 0">
-      <div class="ml-4" style="line-height: 32px">
-        <span class="text-gray-800 font-semibold block" style="margin-bottom: 0">
-          {{ $post->author->name }}
-        </span>
-        <span class="text-gray-700 mb-0">
-          {{ $post->publish_date->diffForHumans() }}
-        </span>
+      <div class="flex-1 flex justify-end items-center">
+        <x-gmblog-share-post :post='$post' />
       </div>
     </div>
-    <div class="flex-1 flex justify-end items-center">
-      <x-gmblog-share-post :post='$post' />
-    </div>
   </div>
+@endif
 
-  <img src="{{ $post->featured_image }}" alt="" class="w-full rounded-lg mb-8">
+<article class="prose lg:prose-xl mx-auto mt-8">
+  <h1>{{ $post->title }}</h1>
+
+  <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="w-full rounded-lg">
+
 
   {!! $post->body !!}
 

@@ -3,7 +3,11 @@
 return [
     'baseRoute' => 'blog',
     'layouts' => [
-        'blog' => 'layouts.app',
-        'post' => 'layouts.app',
-    ]
+        'blog' => 'layouts.blog',
+        'post' => 'layouts.post',
+    ],
+
+    'postCardLayout' => 'horizontal',
+
+    'showAuthor' => true
 ];
