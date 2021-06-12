@@ -12,8 +12,6 @@ composer require gustavomartinez/gmblog
 
 ## Usage
 
-### Create layouts
-
 Create these blade layouts defining some sections in them
 
 ```html
@@ -26,27 +24,15 @@ Create these blade layouts defining some sections in them
 @yield('post')
 ```
 
+Add this section to your base layout to render the meta fields of the single post page.
+
+```html
+@stack('meta')
+```
+
 ### Styling the blog
 
-Install tailwindcss to style the blog
-Add the `@tailwindcss/typography` plugin
-
-```bash
-npm install @tailwindcss/typography
-```
-
-```js
-// tailwind.config.js
-module.exports = {
-    theme: {
-        // ...
-    },
-    plugins: [
-        require("@tailwindcss/typography"),
-        // ...
-    ],
-};
-```
+Install and set up tailwindcss to style the blog, you need to add the `@tailwindcss/typography` plugin to your `tailwind.config.js` file
 
 Include this path in your tailwingcss `purge` array.
 
@@ -62,21 +48,4 @@ purge: [
 ````bash
 php artisan vendor:publish --tag=config --provider='Gmblog\GmblogServiceProvider'
 ```
-
-## Testing
-
-```bash
-composer test
 ````
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

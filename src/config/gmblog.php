@@ -9,5 +9,9 @@ return [
 
     'postCardLayout' => 'horizontal',
 
-    'showAuthor' => true
+    'showAuthor' => true,
+
+    'socialMedia' => [
+        'twitter' => '@'
+    ]
 ];
