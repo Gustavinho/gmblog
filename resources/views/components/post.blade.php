@@ -2,7 +2,7 @@
 
 <div class="text-base lg:text-lg text-gray-600">
   @if (config('gmblog.postCardLayout') === 'vertical')
-    <a href="{{ route('blog.show', $post->slug) }}">
+    <a href="{{ route('gmblog.show', $post->slug) }}">
       <img class="w-full object-cover rounded-lg h-48 xl:h-64" src="{{ $post->featured_image }}">
     </a>
 
@@ -14,7 +14,7 @@
         <h4>{{ $post->author->name }}</h4>
       </div>
       <h3 class="font-bold text-xl text-gray-900">
-        <a href="{{ route('blog.show', $post->slug) }}" class="hover:text-gray-900 hover:underline">
+        <a href="{{ route('gmblog.show', $post->slug) }}" class="hover:text-gray-900 hover:underline">
           {{ $post->title }}
         </a>
       </h3>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="mt-4">
-      <a href="{{ route('blog.show', $post->slug) }}" class="text-gray-700 hover:underline">
+      <a href="{{ route('gmblog.show', $post->slug) }}" class="text-gray-700 hover:underline">
         {{__('Read more')}}...
       </a>
     </div>
@@ -49,7 +49,7 @@
           @endif
 
           <h3 class="font-bold text-xl text-gray-900">
-            <a href="{{ route('blog.show', $post->slug) }}" class="hover:text-gray-900 hover:underline">
+            <a href="{{ route('gmblog.show', $post->slug) }}" class="hover:text-gray-900 hover:underline">
               {{ $post->title }}
             </a>
           </h3>

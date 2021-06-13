@@ -36,11 +36,7 @@
         <small>{{__('Related tags') }}</small>
       </div>
       @foreach ($post->tags as $tag)
-        <a href="{{ $tag->name }}">
-          <x-gmblog-tag>
-            {{ $tag->name }}
-          </x-gmblog-tag>
-        </a>
+        <x-gmblog-tag :tag="$tag" />
       @endforeach
     </div>
     <div class="">

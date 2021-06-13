@@ -16,10 +16,8 @@ class PostsController extends Controller
 
     public function index()
     {
-        $paginate = 20;
-
         return response()->json(
-            $this->posts->allPaginatedBy($paginate)
+            $this->posts->all()->get()
         );
     }
 

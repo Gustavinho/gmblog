@@ -2,6 +2,9 @@
 
 return [
     'baseRoute' => 'blog',
+
+    'postsByTagRoute' => 'tag',
+
     'layouts' => [
         'blog' => 'layouts.blog',
         'post' => 'layouts.post',

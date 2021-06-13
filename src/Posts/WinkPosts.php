@@ -3,19 +3,24 @@
 namespace Gmblog\Posts;
 
 use Gmblog\Contracts\PostsRepository;
+use Illuminate\Database\Eloquent\Builder;
 use Wink\WinkPost;
 
 class WinkPosts implements PostsRepository
 {
-    public function allPaginatedBy(int $paginate = 10)
+    public function all(): Builder
     {
-        $posts = WinkPost::with('tags')
+        return WinkPost::with('tags')
             ->with('author')
             ->live()
-            ->orderBy('publish_date', 'DESC')
-            ->paginate($paginate);
+            ->orderBy('publish_date', 'DESC');
+    }
 
-        return $posts;
+    public function byTag($tag): Builder
+    {
+        return $this->all()->whereHas('tags', function (Builder $query) use ($tag) {
+            $query->whereSlug($tag);
+        });
     }
 
     public function lastNdifferentAs(int $limit, $post)

@@ -7,13 +7,18 @@ use Wink\WinkTag;
 
 class PostsController extends BlogController
 {
-    public function index()
+    public function index($tag = null)
     {
-        $tags = WinkTag::orderBy('name')->get();
+        if ($tag) {
+            $posts = $this->posts->byTag($tag);
+        } else {
+            $posts = $this->posts->all();
+        }
+        $tags = WinkTag::orderBy('name')->withCount('posts')->get();
 
         return view('gmblog::posts.index', [
             'layout' => Gmblog::getLayout('blog'),
-            'posts' => $this->posts->allPaginatedBy(config('gmblog.paginate')),
+            'posts' => $posts->paginate(config('gmblog.paginate')),
             'tags' => $tags
         ]);
     }

@@ -1,8 +1,9 @@
 <?php
 
-namespace Gmblog\Tests;
+namespace Gmblog\Tests\Unit;
 
 use Gmblog\Facades\Gmblog;
+use Gmblog\Tests\TestCase;
 
 class GmblogTest extends TestCase
 {
