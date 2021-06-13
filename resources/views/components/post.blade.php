@@ -1,6 +1,6 @@
 @props(['post'])
 
-<div class="">
+<div class="text-base lg:text-lg text-gray-600">
   @if (config('gmblog.postCardLayout') === 'vertical')
     <a href="{{ route('blog.show', $post->slug) }}">
       <img class="w-full object-cover rounded-lg h-48 xl:h-64" src="{{ $post->featured_image }}">
@@ -11,25 +11,25 @@
         <div class="mr-2 flex-shrink-0">
           <img src="{{ $post->author->avatar }}" alt="" class="rounded-full w-6 h-6 mt-0 mb-0 object-cover">
         </div>
-        <h4 class="text-gray-500">{{ $post->author->name }}</h4>
+        <h4>{{ $post->author->name }}</h4>
       </div>
       <h3 class="font-bold text-xl text-gray-900">
         <a href="{{ route('blog.show', $post->slug) }}" class="hover:text-gray-900 hover:underline">
           {{ $post->title }}
         </a>
       </h3>
-      <span class="inline big:hidden text-gray-500">
+      <span class="inline big:hidden">
         {!! $post->publish_date->diffForHumans() !!}
       </span>
     </div>
 
     <div class="mt-4">
-      <p class="text-base text-gray-500">{{ $post->excerpt }}</p>
+      <p>{{ $post->excerpt }}</p>
     </div>
 
     <div class="mt-4">
-      <a href="{{ route('blog.show', $post->slug) }}" class="text-primary-600 hover:text-primary-700">
-        {{__('Leer más...')}}
+      <a href="{{ route('blog.show', $post->slug) }}" class="text-gray-700 hover:underline">
+        {{__('Read more')}}...
       </a>
     </div>
   @endif
@@ -44,7 +44,7 @@
               <div class="mr-4 flex-shrink-0">
                 <img src="{{ $post->author->avatar }}" alt="" class="rounded-full w-6 h-6 mt-0 mb-0 object-cover">
               </div>
-              <h4 class="text-gray-500">{{ $post->author->name }}</h4>
+              <h4>{{ $post->author->name }}</h4>
             </div>
           @endif
 
@@ -53,7 +53,7 @@
               {{ $post->title }}
             </a>
           </h3>
-          <span class="inline text-gray-500">
+          <span>
             {!! $post->publish_date->diffForHumans() !!}
           </span>
         </div>

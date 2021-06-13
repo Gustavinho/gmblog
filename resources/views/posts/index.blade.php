@@ -14,7 +14,7 @@
   </div>
   @if (!$tags->isEmpty())
     <div class="w-1/3">
-      <h3>Etiquetas relacionadas</h3>
+      <h3>{{ __('Related tags') }}</h3>
       <ul>
         @foreach ($tags as $tag)
           <li class="py-2">

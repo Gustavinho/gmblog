@@ -7,7 +7,7 @@ return [
         'post' => 'layouts.post',
     ],
 
-    'postCardLayout' => 'horizontal',
+    'postCardLayout' => 'vertical',
 
     'showAuthor' => true,
 

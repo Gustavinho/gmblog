@@ -48,7 +48,7 @@
                 "Gmblog\\GmblogServiceProvider"
             ],
             "aliases": {
-                "Gmblog": "Gmblog\\GmblogFacade"
+                "Gmblog": "Gmblog\\Facades\\Gmblog"
             }
         }
     },

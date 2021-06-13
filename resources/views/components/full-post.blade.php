@@ -22,7 +22,7 @@
   </div>
 @endif
 
-<article class="prose lg:prose-xl mx-auto mt-8">
+<article class="prose lg:prose-xl mx-auto mt-8 text-gray-900">
   <h1>{{ $post->title }}</h1>
 
   <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="w-full rounded-lg">
@@ -33,7 +33,7 @@
   <div class="mt-8 flex">
     <div class="flex-1">
       <div class="mb-2">
-        <small>Etiquetas relacionadas</small>
+        <small>{{__('Related tags') }}</small>
       </div>
       @foreach ($post->tags as $tag)
         <a href="{{ $tag->name }}">
@@ -45,7 +45,7 @@
     </div>
     <div class="">
       <div class="mb-2">
-        <small>Compartir en</small>
+        <small>{{ __('Share') }}</small>
       </div>
       <div class="flex justify-end">
         <x-gmblog-share-post :post='$post' />
