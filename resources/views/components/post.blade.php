@@ -27,11 +27,6 @@
       <p>{{ $post->excerpt }}</p>
     </div>
 
-    <div class="mt-4">
-      <a href="{{ route('gmblog.show', $post->slug) }}" class="text-gray-700 hover:underline">
-        {{__('Read more')}}...
-      </a>
-    </div>
   @endif
 
   @if (config('gmblog.postCardLayout') === 'horizontal')
@@ -59,16 +54,22 @@
         </div>
 
         <div class="mt-2 lg:mt-4">
-          <p class="text-base text-gray-500">{{ $post->excerpt }}</p>
+          <p >{{ $post->excerpt }}</p>
         </div>
 
 
       </div>
-      <div class="order-first md:order-last md:w-1/3">
-        <a href="{{ route('blog.show', $post->slug) }}">
+      <div class="order-first md:order-last md:w-4/12 mt-0 md:mt-8">
+        <a href="{{ route('gmblog.show', $post->slug) }}">
           <img class="w-full object-cover rounded-lg h-full" src="{{ $post->featured_image }}">
         </a>
       </div>
     </div>
   @endif
+
+  <div class="mt-4">
+    <a href="{{ route('gmblog.show', $post->slug) }}" class="text-gray-700 hover:underline">
+      {{__('Read more')}}...
+    </a>
+  </div>
 </div>

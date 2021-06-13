@@ -1,6 +1,6 @@
-# gmblog
+# Gmblog
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Blog UI wrapper for the Laravel Wink package.
 
 ## Installation
 
@@ -12,35 +12,62 @@ composer require gustavomartinez/gmblog
 
 ## Usage
 
-Create these blade layouts defining some sections in them
+This package needs two different layouts to render the posts list and the post conent, create these blade layouts in your project defining some sections in them where the content will be displayed.
+
+Posts list
 
 ```html
 <!-- resources/layouts/blog.blade.php -->
 @yield('blog')
 ```
 
+Posts content
+
 ```html
 <!-- resources/layouts/post.blade.php -->
 @yield('post')
 ```
 
-Add this section to your base layout to render the meta fields of the single post page.
+Add this `stack` to your base layout to render the meta fields of the single post page.
 
 ```html
 @stack('meta')
 ```
 
-### Styling the blog
+## Styling the blog
 
-Install and set up tailwindcss to style the blog, you need to add the `@tailwindcss/typography` plugin to your `tailwind.config.js` file
+This package is using Tailwindcss utilities to style the UI so you need to install and set up tailwindcss to style the blog.
+You need to add the `@tailwindcss/typography` plugin to your `tailwind.config.js` file
 
-Include this path in your tailwingcss `purge` array.
+You shluld also include this path in your tailwingcss `purge` array.
 
 ```js
 purge: [
     "../packages/gmblog/**/*.php",
     // ...
 ];
+```
+
+### Colors
+
+It is not mandatory but you can add and customize these colors in your `tailwind.config.js` file.
+
+```js
+{
+    theme: {
+        extend: {
+            colors: {
+                // Share buttons colors
+                facebook: "#3B5998",
+                twitter: "#38A1F3",
+
+                // Main accent color
+                primary: colors.blue,
+                // ...
+            }
+        }
+    }
+}
 ```
 
 ### Translations
@@ -54,9 +81,10 @@ All the texts can be translated using [translations strings as keys](https://lar
 }
 ```
 
-### Publish config file
+### Config
 
-````bash
+You can customize some of the behaviors of this package with the config file.
+
+```bash
 php artisan vendor:publish --tag=config --provider='Gmblog\GmblogServiceProvider'
 ```
-````
