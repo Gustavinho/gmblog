@@ -13,7 +13,7 @@ class PostsController extends BlogController
 
         return view('gmblog::posts.index', [
             'layout' => Gmblog::getLayout('blog'),
-            'posts' => $this->posts->allPaginatedBy(12),
+            'posts' => $this->posts->allPaginatedBy(config('gmblog.paginate')),
             'tags' => $tags
         ]);
     }

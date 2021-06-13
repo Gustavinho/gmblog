@@ -7,14 +7,13 @@ use Wink\WinkPost;
 
 class WinkPosts implements PostsRepository
 {
-    public function allPaginatedBy(int $paginate)
+    public function allPaginatedBy(int $paginate = 10)
     {
         $posts = WinkPost::with('tags')
             ->with('author')
             ->live()
             ->orderBy('publish_date', 'DESC')
-            ->simplePaginate($paginate)
-            ->makeHidden(['body']);
+            ->paginate($paginate);
 
         return $posts;
     }

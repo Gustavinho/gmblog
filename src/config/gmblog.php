@@ -11,6 +11,8 @@ return [
 
     'showAuthor' => true,
 
+    'paginate' => 12,
+
     'socialMedia' => [
         'twitter' => '@'
     ]

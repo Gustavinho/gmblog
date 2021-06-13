@@ -43,6 +43,17 @@ purge: [
 ];
 ```
 
+### Translations
+
+All the texts can be translated using [translations strings as keys](https://laravel.com/docs/8.x/localization#using-translation-strings-as-keys)
+
+```js
+/* lang/en.json */
+{
+    "Read more": "Read more",
+}
+```
+
 ### Publish config file
 
 ````bash

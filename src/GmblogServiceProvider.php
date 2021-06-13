@@ -4,6 +4,7 @@ namespace Gmblog;
 
 use Gmblog\Contracts\PostsRepository;
 use Gmblog\Posts\WinkPosts;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -35,6 +36,8 @@ class GmblogServiceProvider extends ServiceProvider
         ], 'config');
 
         $this->loadComponents();
+
+        Paginator::useTailwind();
     }
 
     private function loadComponents()

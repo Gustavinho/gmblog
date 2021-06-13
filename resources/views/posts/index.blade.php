@@ -11,6 +11,10 @@
         </div>
       @endforeach
     @endforeach
+
+    <div class="mt-8">
+      {{ $posts->links() }}
+    </div>
   </div>
   @if (!$tags->isEmpty())
     <div class="w-1/3">
