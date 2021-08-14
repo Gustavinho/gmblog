@@ -7,15 +7,23 @@ return [
     |--------------------------------------------------------------------------
     |
     | These are the base routes to use for the posts list and the posts
-    | list filtered by tag. Both `baseRoute` and `baseApiRoute` are the base
-    | routes to get the posts and the tags.
+    | list filtered by tag.
     |
     */
     'baseRoute' => 'blog',
 
-    'apiBaseRoute' => 'api',
-
     'postsByTagRoute' => 'tag',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Api base route
+    |--------------------------------------------------------------------------
+    |
+    | This is the base route to mount an endpoint to get the posts by an HTTP
+    | api.
+    |
+    */
+    'apiBaseRoute' => 'api',
 
     /*
     |--------------------------------------------------------------------------
