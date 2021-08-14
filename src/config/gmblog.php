@@ -16,6 +16,28 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Api base route
+    |--------------------------------------------------------------------------
+    |
+    | This is the base route to mount an endpoint to get the posts by an HTTP
+    | api.
+    |
+    */
+    'apiBaseRoute' => 'api',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Paginate
+    |--------------------------------------------------------------------------
+    |
+    | Define how many posts will be displayed per page in the posts list. It uses
+    | the default Laravel paginator
+    |
+    */
+    'paginate' => 12,
+
+    /*
+    |--------------------------------------------------------------------------
     | Blog layouts
     |--------------------------------------------------------------------------
     |
@@ -23,7 +45,8 @@ return [
     | package doesn't have a base layout with a tipically nav bar, footer etc,
     | it uses template inheritance to render the views inside a layout with the
     | rest of your UI.
-    | These are the layouts where the posts list and the post content
+    | These are the layouts where the posts list and the post content. This is
+    | needed only if you are using the blade views.
     |
     */
     'layouts' => [
@@ -56,17 +79,6 @@ return [
     |
     */
     'showAuthor' => true,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Paginate
-    |--------------------------------------------------------------------------
-    |
-    | Define how many posts will be displayed per page in the posts list. It uses
-    | the default Laravel paginator
-    |
-    */
-    'paginate' => 12,
 
     /*
     |--------------------------------------------------------------------------
