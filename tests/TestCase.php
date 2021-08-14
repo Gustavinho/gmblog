@@ -5,6 +5,7 @@ namespace Gmblog\Tests;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Gmblog\GmblogServiceProvider;
+use Wink\WinkServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -20,6 +21,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
+            WinkServiceProvider::class,
             GmblogServiceProvider::class,
         ];
     }
@@ -32,6 +34,7 @@ class TestCase extends Orchestra
             'database' => ':memory:',
             'prefix' => '',
         ]);
+        $app['config']->set('wink.database_connection', 'sqlite');
 
         /*
         include_once __DIR__.'/../database/migrations/create_gmblog_table.php.stub';

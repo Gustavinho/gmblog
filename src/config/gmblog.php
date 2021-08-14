@@ -7,12 +7,26 @@ return [
     |--------------------------------------------------------------------------
     |
     | These are the base routes to use for the posts list and the posts
-    | list filtered by tag.
+    | list filtered by tag. Both `baseRoute` and `baseApiRoute` are the base
+    | routes to get the posts and the tags.
     |
     */
     'baseRoute' => 'blog',
 
+    'apiBaseRoute' => 'api',
+
     'postsByTagRoute' => 'tag',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Paginate
+    |--------------------------------------------------------------------------
+    |
+    | Define how many posts will be displayed per page in the posts list. It uses
+    | the default Laravel paginator
+    |
+    */
+    'paginate' => 12,
 
     /*
     |--------------------------------------------------------------------------
@@ -23,7 +37,8 @@ return [
     | package doesn't have a base layout with a tipically nav bar, footer etc,
     | it uses template inheritance to render the views inside a layout with the
     | rest of your UI.
-    | These are the layouts where the posts list and the post content
+    | These are the layouts where the posts list and the post content. This is
+    | needed only if you are using the blade views.
     |
     */
     'layouts' => [
@@ -56,17 +71,6 @@ return [
     |
     */
     'showAuthor' => true,
-
-    /*
-    |--------------------------------------------------------------------------
-    | Paginate
-    |--------------------------------------------------------------------------
-    |
-    | Define how many posts will be displayed per page in the posts list. It uses
-    | the default Laravel paginator
-    |
-    */
-    'paginate' => 12,
 
     /*
     |--------------------------------------------------------------------------
